@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  	<meta charset="utf-8">
+  	<meta name="description" content="Your description goes here">
+  	<meta name="keywords" content="one, two, three">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Fernys Fiesta Desserts</title>
+		<link rel="shortcut icon" type="x-icon" href="images/redbakeryicon.png">
+		
+		<!-- Icons & Fonts-->
+		<link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		
+		<header class="navbar">
+			<h1 class="fancy-font">Ferny's Fiesta Desserts</h1>
+				
+			<a href="#" class="menu-icon"><i class='bx bx-menu'></i></a>
+
+			<ul class="nav-list">
+				<li><a href="#">Home</a></li>
+				<li><a href="#menu">Menu</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#specials">Special Offers</a></li>
+				<li><a href="#reviews">Reviews</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+
+			<p class="bold contact-num"><a href="https://wa.me/529998020769?text=Hi%20Fernys%20Fiesta%20Desserts!%20I%27d%20like%20to%20place%20an%20order." target="_blank" class="whatsapp-link"><i class='bx bxl-whatsapp'></i> +52 999 802 0769</a></p>
+				
+		</header>
+		<main>
+			<div class="hero-text">
+				<h2 class="fancy-font">Decadent custom made desserts!</h2>
+				<a href="#order" class="btn btn-alt bold">Place An Order</a>		
+			</div>
+		</main>
+		<div class="wrapper">
+			<section class="menu" id="menu">
+				<h3 class="fancy-font menu-title">Our Menu</h3>
+				<!-- <ul class="menu-list">
+					<li><a href="#">Cakes</a></li>
+					<li><a href="#">Cookies</a></li>
+					<li><a href="#">Other</a></li>
+				</ul> -->
+
+				<!-- Accessible tabs -->
+				<ul class="menu-list menu-tabs" role="tablist" aria-label="Dessert categories">
+					<li>
+						<button role="tab" id="tab-cakes" data-target=".cake-menu" class="tab-btn is-active" aria-selected="true">Cakes</button>
+					</li>
+					<li>
+						<button role="tab" id="tab-cookies" data-target=".cookies-menu" class="tab-btn" aria-selected="false">Cookies</button>
+					</li>
+					<li>
+						<button role="tab" id="tab-other" data-target=".other-menu"   class="tab-btn" aria-selected="false">Other</button>
+					</li>
+				</ul>
+
+				<div class="menu-container">
+					<aside class="menu-about">
+						<h3 class="fancy-font">About Our Desserts</h3>
+						<p>At Ferny's Fiesta Desserts, we bake custom cakes, cookies, and desserts for your special occasion. We only use the best ingredients and can accomodate for any dietary restrictions. Take a look at our custom desserts!</p>
+						<a href="#order" class="btn">Click To Order</a>
+					</aside>
+					
+					<section class="cake-menu menu-grid active">
+
+						<button type="button" class="menu-card" data-full="images/cake_gallery/cake1.jpg"><img src="images/cake_gallery/cake1.jpg" alt="A happy birthday cake with a musical note" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cake_gallery/cake2.jpg"><img src="images/cake_gallery/cake2.jpg" alt="A happy birthday cake for a 70 year old with a hat and decorations" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cake_gallery/cake3.jpg"><img src="images/cake_gallery/cake3.jpg" alt="A happy birthday cake with a custom fish drawing for a 10 year old" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cake_gallery/cake4.jpg"><img src="images/cake_gallery/cake4.jpg" alt="A happy birthday cake for a high schooler with a skull" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cake_gallery/cake5.jpg"><img src="images/cake_gallery/cake5.jpg" alt="A cake with roses and fashioned as a top hat" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cake_gallery/cake6.jpg"><img src="images/cake_gallery/cake6.jpg" alt="A chocolate cake with caramel" loading="lazy">
+						</button>
+
+					</section>
+
+					<section class="cookies-menu">
+
+						<button type="button" class="menu-card" data-full="images/cookie_gallery/cookie1.jpeg"><img src="images/cookie_gallery/cookie1.jpeg" alt="Chewy chocolate chip cookies" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cookie_gallery/cookie2.jpeg"><img src="images/cookie_gallery/cookie2.jpeg" alt="Chewy chocolate chip cookies" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cookie_gallery/cookie3.jpeg"><img src="images/cookie_gallery/cookie3.jpeg" alt="Chewy chocolate chip cookies" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cookie_gallery/cookie4.jpeg"><img src="images/cookie_gallery/cookie4.jpeg" alt="Chewy chocolate chip cookies" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cookie_gallery/cookie5.jpeg"><img src="images/cookie_gallery/cookie5.jpeg" alt="Chewy chocolate chip cookies" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/cookie_gallery/cookie6.jpeg"><img src="images/cookie_gallery/cookie6.jpeg" alt="Chewy chocolate chip cookies" loading="lazy">
+						</button>
+
+					</section>
+
+					<section class="other-menu">
+
+						<button type="button" class="menu-card" data-full="images/other_gallery/other1.jpeg"><img src="images/other_gallery/other1.jpeg" alt="Assorted dessert bars" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/other_gallery/other2.jpeg"><img src="images/other_gallery/other2.jpeg" alt="Assorted dessert bars" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/other_gallery/other3.jpeg"><img src="images/other_gallery/other3.jpeg" alt="Assorted dessert bars" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/other_gallery/other4.jpeg"><img src="images/other_gallery/other4.jpeg" alt="Assorted dessert bars" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/other_gallery/other5.jpeg"><img src="images/other_gallery/other5.jpeg" alt="Assorted dessert bars" loading="lazy">
+						</button>
+
+						<button type="button" class="menu-card" data-full="images/other_gallery/other6.jpeg"><img src="images/other_gallery/other6.jpeg" alt="Assorted dessert bars" loading="lazy">
+						</button>
+
+					</section>
+				</div>
+			</section>
+
+			<section class="about" id="about">
+				<div class="about-text">
+					<h3 class="fancy-font">About Me</h3>
+					<p>Hi, I'm Fernando, the proud owner of Ferny's Fiesta Desserts. I'm a self-taught home baker with over 25 years of experience creating desserts that bring joy to every occasion. My love for baking began long before it became a business. I used to make desserts for work parties, holiday gatherings, and family celebrations.</p>
+					<p>But, the moment that truly sparked my journey was when my godson turned five. We bought him a beautiful Toy Story cake from a bakery - it looked amazing, but the flavor just didn't match its appearance. The next year, he wanted a Sonic the Hedgehog cake. That experience inspired me to take a cake decorating course, and from there, my passion grew even stronger.</p>
+					<p>Now based in Merida, Yucatan, I decided to turn my lifelong love of baking into my full-time profession. Today, through Ferny's Fiesta Desserts, I create and sell delicious desserts for every occasion - from birthdays to "just because" treats.</p>
+					<h3 class="fancy-font">Fernando Henry</h3>
+					    <!-- New images start here -->
+					<div class="about-images">
+						
+						<img src="images/other_gallery/fernando.jpeg" alt="Fernando Henry, owner of Ferny's Fiesta Desserts" class="about-photo">
+						
+						<p class="about-caption">And here's the cake that started it all!</p>
+
+						<img src="images/cake_gallery/sonic.jpg" alt="Sonic the Hedgehog cake made by Fernando" class="about-photo">
+					</div>
+				</div>
+			</section>
+
+			<section class="specials" id="specials">
+				<div class="specials-container">
+					<aside class="specials-offer">
+						<h3 class="fancy-font">Special Offers</h3>
+
+						<p>Please contact us for our current specials! We are constantly innovating and experimenting with new ideas and flavors. Our specials are on a limited, first-come first-serve basis.</p>
+	
+						<a href="#order" class="btn">Click To Order</a>
+					</aside>
+					<div class="specials-img-container">
+						<img src="images/cake_gallery/specialoffers.jpg" alt="A cake decorated with a variety of fruit toppings">
+					</div>
+					
+				</div>
+			</section>
+
+			<section class="reviews" id="reviews">
+				<h3 class="fancy-font">Reviews</h3>
+				
+				<div class="review-container">
+	
+					<div class="review1">
+						<p>They made such an amazing wedding cake for us, everyone said it was the most tasty cake they ever had! We would recommend Carolina Cakes to whoever needs a cake for a celebration or any event. Thank you again.</p>
+						<h3>&mdash; Justin Thyme</h3>
+					</div>
+					
+					<div class="review2">
+						<p>Literally the best cupcakes I have ever had. Their presentation is amazing as well! I tried a variety of flavors and you can&apos;t go wrong with any of them.</p>
+						<h3>&mdash; Holly Wood</h3>
+					</div>
+
+					<div class="review3">
+						<p>Carolina Cakes elevated our special day to an unforgettable experience.</p>
+						<h3>&mdash; Dinah Mite</h3>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="contact" id="contact">
+				<div class="contact-banner">
+					
+					<aside class="contact-box">
+						<h3 class="fancy-font">Our Contacts</h3>
+						
+						<div class="contact-container">
+
+							<div class="contact-info">
+								<span>Phone:</span>
+								<h5>
+									<a href="https://wa.me/529998020769" target="_blank" class="whatsapp-link">
+									<i class='bx bxl-whatsapp'></i> +52 999 802 0769
+									</a>
+								</h5>
+							</div>
+
+							<div class="contact-info">
+								<span>E-mail:</span>
+								<h5>
+									<a href="mailto:fernysfiestadesserts@gmail.com" class="email-link">
+									fernysfiestadesserts@gmail.com
+									</a>
+								</h5>
+							</div>
+
+							<div class="contact-info">
+								<span>Address:</span>
+								<h5>Merida<br />Yucatan, Mexico</h5>
+							</div>
+						
+						</div>
+						
+					</aside>
+				</div>
+			</section>
+
+			<section class="order" id="order">
+				<h3 class="fancy-font" style="background-color:#903716; color:#FADFB2; padding:10px 20px; border-radius:8px;">Place An Order</h3>
+				
+				<form action="https://formspree.io/f/myzbjdbl" method="POST">
+					<!-- <div class="invis">
+						<input name="bot-field">
+					</div> -->
+
+					<div class="form-wrapper">
+						
+						<div class="left-inputs">
+							<input type="text" name="name" placeholder="Your Name" required>
+	
+							<input type="email" name="email" placeholder="E-mail" required>
+						</div>
+	
+						<div class="right-inputs">
+							<input type="tel" name="phone" placeholder="Phone Number" required>
+						</div>
+
+					</div>
+					<label for="message">Write us a message! :</label>
+					<textarea rows="6" name="message" id="message" placeholder="Type your message here..."></textarea>
+					
+					<input type="submit" value="SEND" class="btn" id="submit-btn">
+				</form>
+
+			</section>
+
+			<footer class="footer-nav navbar">
+				<div class="copyright">
+					<h3 class="fancy-font"><a href="#">Ferny's Fiesta Desserts</a></h3>
+					<span>Copywright 2025 By <a href="#">Haroon A.</a></span>
+				</div>
+
+				<ul class="nav-list">
+					<li><a href="#">Home</a></li>
+					<li><a href="#menu">Menu</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#specials">Special Offers</a></li>
+					<li><a href="#reviews">Reviews</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+
+				<div class="socials">
+					<a href="https://www.instagram.com/fernysfiestadesserts" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+					<a href="mailto:fernysfiestadesserts@gmail.com" aria-label="Email"><i class='bx bx-envelope' ></i></a>	
+				</div>
+			</footer>
+		</div>
+		
+		<!-- Minimal, conflict-free lightbox -->
+		<div class="ff-lightbox" hidden>
+		<div class="ff-backdrop"></div>
+		<div class="ff-modal" role="dialog" aria-modal="true" aria-label="Image preview">
+			<button class="ff-close" aria-label="Close preview">×</button>
+			<img id="ff-lightbox-img" alt="Expanded dessert image">
+		</div>
+		</div>
+
+		<script type="text/javascript" src="js/main.js" defer></script>
+
+	</body>
+</html>
