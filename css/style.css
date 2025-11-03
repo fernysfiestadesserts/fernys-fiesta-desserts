@@ -20,8 +20,6 @@
 }
 
 
-
-
 /******************************************
 /* BASE STYLE
 /*******************************************/
@@ -49,7 +47,6 @@
 }
 
 .btn:hover {
-
   background: var(--cream-color);
   color: var(--darkred-color);
 }
@@ -98,27 +95,30 @@ a:visited {
 }
 
 
-
 /******************************************
-/* HEADER
-/*******************************************/
+/* HEADER (CLEANED)
+*******************************************/
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;     /* desktop: brand left, nav center, phone right */
   width: 100%;
   padding: 1em;
-  background-color: #903716;  /* Deep reddish-brown background */
+  background-color: #903716;          /* Deep reddish-brown background */
   color: #FADFB2;
 }
 
+/* desktop inline nav */
 .nav-list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 43%;
-  margin: .5em 8em;
+  gap: 1.25rem;
+  margin: 0;                          /* remove wide side margins that caused misalignment */
+  padding: 0;
+  list-style: none;
+  position: static;
+  background: transparent;
 }
 
 .nav-list li {
@@ -143,6 +143,7 @@ a:visited {
   align-items: center;
 }
 
+/* Hamburger icon (hidden on desktop; shown in mobile media query below) */
 .bx-menu {
   display: none;
   color: #FADFB2;
@@ -150,24 +151,20 @@ a:visited {
 
 /* WhatsApp clickable link */
 .whatsapp-link {
-  color: #FADFB2;             /* Match your navbar text color */
+  color: #FADFB2;
   text-decoration: none;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
-  gap: 6px;                   /* Space between icon and text */
+  gap: 6px;
 }
-
-/* WhatsApp icon color and hover effect */
 .whatsapp-link i {
-  color: #25D366;             /* WhatsApp green */
-  font-size: 1.2em;           /* Slightly larger than text */
+  color: #25D366;
+  font-size: 1.2em;
 }
-
-/* Hover effect for entire link */
 .whatsapp-link:hover {
-  color: #ffffff;             /* Optional: brighten text on hover */
-  text-decoration: underline; /* Subtle hover indicator */
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 
@@ -180,7 +177,6 @@ main {
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/cake_gallery/mainbg.jpg);
   background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/cake_gallery/mainbg.jpg);
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../images/cake_gallery/mainbg.jpg);
-
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -195,9 +191,7 @@ main {
   margin: 0 auto;
 }
 
-.container {
-  text-align: center;
-}
+.container { text-align: center; }
 
 
 /******************************************
@@ -209,6 +203,7 @@ main {
   margin: 0 auto;
 }
 
+
 /******************************************
 /* MENU SECTION
 /*******************************************/
@@ -218,13 +213,11 @@ main {
   padding: 3em 0;
 }
 
-.menu h3 {
-  margin-bottom: 1em;
-}
+.menu h3 { margin-bottom: 1em; }
 
 .menu-title {
-  background-color: #903716;  /* orange accent */
-  color: #FADFB2;             /* beige text */
+  background-color: #903716;
+  color: #FADFB2;
   display: inline-block;
   padding: 8px 16px;
   border-radius: 8px;
@@ -243,32 +236,24 @@ main {
   border-bottom: 3px solid transparent;
   transition: all .50s ease;
 }
-
-.menu-list li:hover {
-  border-bottom: 3px solid var(--darkred-color);
-}
+.menu-list li:hover { border-bottom: 3px solid var(--darkred-color); }
 
 .menu-container {
   display: flex;
   justify-content: space-around;
   max-width: 100%;
-  /* height: 450px; */
 }
 
 /* Make the gallery area take the remaining width beside the aside */
 .cake-menu,
 .cookies-menu,
 .other-menu {
-  flex: 1 1 0;      /* grow to fill; no fixed width */
-  min-width: 0;     /* allow grid to calculate columns properly */
+  flex: 1 1 0;
+  min-width: 0;
 }
 
-/* (optional) give some space between aside and gallery */
-.menu-container {
-  gap: 16px;
-  align-items: flex-start;  /* prevents vertical centering */
-}
-
+/* (optional) space between aside and gallery */
+.menu-container { gap: 16px; align-items: flex-start; }
 
 .menu-about {
   display: flex;
@@ -282,19 +267,9 @@ main {
   padding: .5em;
 }
 
-.menu-about span {
-  font-weight: bold;
-}
-
-.menu-about p {
-  word-spacing: 2px;
-  line-height: 25px;
-  padding-bottom: .8em;
-}
-
-.menu-about a {
-  margin-top: 1em;
-}
+.menu-about span { font-weight: bold; }
+.menu-about p { word-spacing: 2px; line-height: 25px; padding-bottom: .8em; }
+.menu-about a { margin-top: 1em; }
 
 .menu-card {
   height: 200px;
@@ -311,10 +286,7 @@ main {
   object-fit: cover;
   transition: all .50s ease;
 }
-
-.menu-card img:hover {
-  transform: scale(1.1);
-}
+.menu-card img:hover { transform: scale(1.1); }
 
 .menu-tabs {
   display: flex;
@@ -323,50 +295,33 @@ main {
   padding: 0;
   margin: 12px 0 20px;
 }
-
 .menu-tabs .tab-btn {
-  background: rgba(144, 55, 22, 0.6); /* same color but 60% opacity for inactive tabs */
+  background: rgba(144, 55, 22, 0.6);
   color: #FADFB2;
   border: none;
   padding: 10px 22px;
-  border-radius: 30px;               /* rounded pill style */
+  border-radius: 30px;
   cursor: pointer;
   font-weight: 700;
   font-size: 1.1rem;
   transition: background 0.3s, transform 0.2s, box-shadow 0.2s, opacity 0.3s;
 }
-
-/* Active tab stands out */
 .menu-tabs .tab-btn.is-active {
-  background: #903716;               /* full opacity brand color */
+  background: #903716;
   opacity: 1;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
-
-/* Hover gives feedback */
-.menu-tabs .tab-btn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* Focus outline for accessibility */
-.menu-tabs .tab-btn:focus-visible {
-  outline: 2px solid #FADFB2;
-  outline-offset: 3px;
-}
+.menu-tabs .tab-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+.menu-tabs .tab-btn:focus-visible { outline: 2px solid #FADFB2; outline-offset: 3px; }
 
 /******************************************
 /* ABOUT SECTION
 /*******************************************/
 
-/* .about {
-  padding: 4em 0;
-} */
-
 section.about {
   background: #903716;
   color: #FADFB2;
-  padding: 48px 0;        /* space above/below */
+  padding: 48px 0;
 }
 
 .about-text {
@@ -374,14 +329,12 @@ section.about {
   max-width: 65%;
   margin: 0 auto;
 }
-
 .about-text h3:first-of-type {
   display: inline-block;
   border-top: 3px solid black;
   padding-top: 1em;
   margin-bottom: 1em;
 }
-
 .about-text h3:last-of-type {
   display: inline-block;
   border-bottom: 3px solid black;
@@ -389,7 +342,6 @@ section.about {
   margin-top: 1em;
   padding-bottom: 1em;
 }
-
 .about-text p {
   font-size: 1.2rem;
   word-spacing: 2px;
@@ -401,15 +353,12 @@ section.about {
 /* SPECIAL OFFER SECTION
 /*******************************************/
 
-.specials {
-  padding: 3em 0;
-}
+.specials { padding: 3em 0; }
 
 .specials-container {
   display: flex;
   justify-content: space-between;
   max-width: 100%;
-  /* height: auto; */
 }
 
 .specials-offer {
@@ -423,37 +372,25 @@ section.about {
   text-align: center;
   max-width: 33%;
   padding: 1.5em;
-  /* margin-right: 2em; */
 }
-
-.specials-offer p {
-  word-spacing: 2px;
-  line-height: 35px;
-}
-
-.specials-img-container {
-  width: 65%;
-}
+.specials-offer p { word-spacing: 2px; line-height: 35px; }
+.specials-img-container { width: 65%; }
 
 /******************************************
 /* REVIEW SECTION
 /*******************************************/
 
 .reviews {
-  /* padding: 4em 0; */
   text-align: center;
   background: #903716;
   color: #FADFB2;
 }
-
 .reviews > h3 {
-  /* display: inline-block; */
   font-size: 4.5rem;
   border-top: 3px solid black;
   padding-top: 1em;
   margin-bottom: 1em;
 }
-
 .review-container {
   display: flex;
   justify-content: space-around;
@@ -462,7 +399,6 @@ section.about {
   width: 100%;
   margin: 0 auto;
 }
-
 .review-container > div {
   word-spacing: 2px;
   line-height: 35px;
@@ -470,7 +406,6 @@ section.about {
   padding: .5em;
   margin-bottom: 3.5em;
 }
-
 .review-container h3 {
   color: #FADFB2;
   font-family: "MonteCarlo", cursive;
@@ -495,7 +430,6 @@ section.about {
   background-size: cover;
   border-radius: 5px;
   height: 25em;
-  /* padding: 7em 0; */
   width: 100%;
 }
 
@@ -509,12 +443,8 @@ section.about {
   text-align: center;
   margin: 1.5em 4.5em 3em 0;
   padding: 0 1.5em;
-  /* width: fit-content; */
 }
-
-.contact-box h3 {
-  margin-top: 1em;
-}
+.contact-box h3 { margin-top: 1em; }
 
 .contact-container{
   display: flex;
@@ -523,27 +453,14 @@ section.about {
   height: 60%;
 }
 
-.contact-info {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contact-info h5 {
-  text-align: right;
-  margin-left: 3em;
-}
-
+.contact-info { display: flex; justify-content: space-between; }
+.contact-info h5 { text-align: right; margin-left: 3em; }
 
 /******************************************
 /* ORDER SECTION
 /*******************************************/
-.order {
-  padding: 4em 0;
-}
-.order h3 {
-  text-align: center;
-  margin-bottom: 1em;
-}
+.order { padding: 4em 0; }
+.order h3 { text-align: center; margin-bottom: 1em; }
 
 .order form {
   max-width: 67%;
@@ -551,11 +468,7 @@ section.about {
   text-align: center;
 }
 
-.form-wrapper {
-  display: flex;
-  justify-content: space-between;
-
-}
+.form-wrapper { display: flex; justify-content: space-between; }
 
 .left-inputs,
 .right-inputs {
@@ -564,8 +477,6 @@ section.about {
   width: 45%;
   word-spacing: 2px;
   line-height: 35px;
-
-  /* padding: .5em; */
 }
 
 .order input,
@@ -579,16 +490,7 @@ section.about {
   font-size: 1.1rem;
 }
 
-.order .invis {
-  display: none;
-}
-
-/* .form-btn {
-  width: 13em;
-  border: 4px solid var(--darkred-color);
-  border-radius: 4px;
-  padding: 1em 2em;
-} */
+.order .invis { display: none; }
 
 .order textarea {
   display: block;
@@ -614,11 +516,7 @@ section.about {
   padding: .7em 2em;
   margin: 2em;
 }
-
-#submit-btn:hover {
-  background-color: var(--cream-color);
-  color: var(--darkred-color);
-}
+#submit-btn:hover { background-color: var(--cream-color); color: var(--darkred-color); }
 
 footer {
   display: flex;
@@ -626,351 +524,141 @@ footer {
   color: var(--cream-color);
   border-radius: 4px;
 }
+.copyright span { font-size: .7rem; opacity: .5; }
+.footer-nav { justify-content: space-between; }
+footer .socials i { margin: 0 .2em; font-size: 2rem; }
 
-.copyright span {
-  font-size: .7rem;
-  opacity: .5;
-}
 
-/* .copyright a:hover {
-  opacity: 1;
-  color: white;
-} */
-
-.footer-nav {
-  justify-content: space-between;
-}
-
-footer .socials i {
-  margin: 0 .2em;
-  font-size: 2rem;
-}
+/* ---------- Responsive adjustments (non-navbar) ---------- */
 
 @media all and (max-width: 1496px) {
-
-  /* ==== MENU SECTION ==== */
-  .menu-container {
-    max-width: 100%;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .menu-about {
-    max-width: 30%;
-  }
-
-  .menu-about * {
-    padding-bottom: 1em;
-  }
-
-  .cake-menu {
-    max-width: 55%;
-  }
-
-  .menu-card {
-    height: 140px;
-    width: 280px;
-  }
+  .menu-container { max-width: 100%; justify-content: center; margin: 0 auto; }
+  .menu-about { max-width: 30%; }
+  .menu-about * { padding-bottom: 1em; }
+  .cake-menu { max-width: 55%; }
+  .menu-card { height: 140px; width: 280px; }
 }
 
 @media all and (max-width: 1311px) {
-  /* ==== MENU SECTION ==== */
-  .menu-card {
-    height: 100px;
-    width: 200px;
-  }
-
-  .menu-about {
-    max-width: 45%;
-  }
-
-  .cake-menu {
-    max-width: 45%;
-  }
+  .menu-card { height: 100px; width: 200px; }
+  .menu-about { max-width: 45%; }
+  .cake-menu { max-width: 45%; }
 }
-
 
 @media all and (max-width: 1392px) {
-  h2.fancy-font {
-    font-size: 5rem;
-  }
-
-  /* ===== REVIEW SECTION ==== */
-  .review-container > div {
-    line-height: 30px;
-  }
-
-  /* ===== ABOUT SECTION ==== */
-  .about-text {
-    max-width: 80%;
-    line-height: 30px;
-  }
-
-  /* ===== SPECIALS SECTION ==== */
-  .specials-offer p {
-    line-height: 30px;
-  }
+  h2.fancy-font { font-size: 5rem; }
+  .review-container > div { line-height: 30px; }
+  .about-text { max-width: 80%; line-height: 30px; }
+  .specials-offer p { line-height: 30px; }
 }
 
-@media all and (max-width: 1185px) {
-
-  /* ===== MENU SECTION ==== */
-  .menu-container {
-    flex-direction: column-reverse;
-  }
-
-  .cake-menu {
-    max-width: 90%;
-    margin: auto;
-    margin-bottom: 1em;
-  }
-
-  .menu-about {
-    max-width: 85%;
-    margin: 0 auto;
-  }
-
-  .menu-about * {
-    padding-bottom: 1em;
-  }
-
-
-  /* ===== SPECIALS SECTION ==== */
-  
-  .specials-offer p {
-    line-height: 25px;
-    font-size: .9rem;
-  }
-
-  /* ===== ABOUT SECTION ==== */
-
-  .about-text  p {
-    font-size: 1rem;
-    line-height: 30px;
-  }
-
-  /* ===== ORDER SECTION ==== */
-
-  .order textarea {
-    width: 100%;
-  }
-
-}
-
+/* ===== SINGLE NAV BREAKPOINT (ONLY PLACE NAV CHANGES LIVE) ===== */
 @media all and (max-width: 1080px) {
+  .menu, .about, .specials, .reviews, .contact, .order { padding: 2em 0; }
 
-  .menu, .about, .specials, .reviews, .contact, .order {
-    padding: 2em 0;
-  }
+  /* NAVBAR — mobile/tablet */
+  .navbar { justify-content: space-between; padding: .5em 1em; }
+  .contact-num { display: none; }
 
-  /* ===== HEADER ====== */
-
-  .navbar {
-    justify-content: space-between;
-    padding: .5em 1em;
-  }
-
-  .contact-num {
-    display: none;
-  }
-
+  /* CLOSED: truly hidden — no paint, no layout (prevents “ghost” pill) */
   .nav-list {
-    position: absolute;
-    top: -50px;
-    right: 220px;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 425px;
-    height: 50vh;
-    margin: 7% 0;
-    font-size: 1.3rem;
-    background: var(--darkred-color);
-    color: white;
-    border-radius: 4px;
-    backdrop-filter: blur(7px);
-    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    overflow: hidden;
-
-    height: 0;
+    display: none !important;
+    position: static !important;
+    background: transparent !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
+  /* OPEN: compact, semi-transparent dropdown */
   .nav-list.open {
-    height: 450px;
-  }
-
-  .bx-menu {
-    display: block;
-    font-size: 3rem;
-  }
-
-  .bxs-x-square {
-    display: inherit;
-  }
-
-  /* ===== HERO CONTENT ===== */
-  .fancy-font {
-    font-size: 2rem;
-  }
-
-  h2.fancy-font {
-    font-size: 3.8rem;
-  }
-
-  .hero-text {
-    padding: 2.5em 0;
-  } 
-
-
-  .menu-about {
-    padding:  .5em 6.5em;
-  }
-
-  .menu-card {
-    width: 45%;
-    height: 190px;
-  }
-   
-
-  /* ==== SPECIALS SECTION ==== */
-
-  .specials-container {
-    flex-direction: column-reverse;
-    justify-content: center;
- 
-  }
-
-  .specials-offer {
-    max-width: 100%;
-    padding: 1.5em 4em;
-    border-radius: 0;
-  }
-
-  .specials-offer h3 {
-    font-size: 3rem;
-    margin-bottom: .5em;
-  }
-
-  .specials-offer p {
-    margin-bottom: 2em;
-  }
-
-  .specials-img-container {
-    width: 100%;
-  }
-
-  /* ==== REVIEW SECTION ==== */
-
-  .reviews > h3 {
-    border: none;
-    padding-top: 0;
-  }
-
-  .review-container {
+    display: flex !important;
+    position: absolute !important;
+    right: 16px !important;
+    top: 64px !important;
     flex-direction: column;
-    align-items: center;
-    border: none;
+    width: min(85vw, 300px);
+    z-index: 9999;
+
+    background: rgba(144, 55, 22, 0.55);  /* brand tone, lighter */
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 8px 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 
-  .review-container > div {
-    max-width: 80%;
-    margin-bottom: 3em;
+  /* Hamburger icon visible on mobile */
+  .bx-menu { display: block; font-size: 3rem; }
+
+  /* Dropdown items */
+  .nav-list.open li {
+    background: #FADFB2;
+    color: #903716;
+    border-radius: 6px;
+    text-align: center;
+    margin: 4px 0;
   }
+  .nav-list.open li a {
+    display: block;
+    padding: 0.5em;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  /* HERO */
+  .fancy-font { font-size: 2rem; }
+  h2.fancy-font { font-size: 3.8rem; }
+  .hero-text { padding: 2.5em 0; }
+
+  .menu-about { padding: .5em 6.5em; }
+  .menu-card { width: 45%; height: 190px; }
+
+  .specials-container { flex-direction: column-reverse; justify-content: center; }
+  .specials-offer { max-width: 100%; padding: 1.5em 4em; border-radius: 0; }
+  .specials-offer h3 { font-size: 3rem; margin-bottom: .5em; }
+  .specials-offer p { margin-bottom: 2em; }
+  .specials-img-container { width: 100%; }
+
+  .reviews > h3 { border: none; padding-top: 0; }
+  .review-container { flex-direction: column; align-items: center; border: none; }
+  .review-container > div { max-width: 80%; margin-bottom: 3em; }
 }
 
 @media all and (max-width: 893px) {
-  /* ==== MENU SECTION ==== */
-  .cake-menu {
-    max-width: 100%;
-  }
-
-  .menu-about {
-    max-width: 100%;
-  }
+  .cake-menu { max-width: 100%; }
+  .menu-about { max-width: 100%; }
 }
 
 @media all and (max-width: 763px) {
-  .hero-text {
-    width: 90%;
-  }
+  .hero-text { width: 90%; }
+  h2.fancy-font { font-size: 3rem; }
+  .navbar { padding: .6em; }
 
-  h2.fancy-font {
-    font-size: 3rem;
-  }
+  /* position the dropdown a bit closer on small phones */
+  .nav-list.open { top: 56px !important; right: 12px !important; }
 
-  .navbar {
-    padding: .6em;
-  }
+  .wrapper { max-width: 100%; }
 
-  .nav-list{
-    top: 40px;
-    right: 80px;
-  }
+  .menu-about { max-width: 100%; padding: 0 6em 2em; border-radius: 0; }
+  .menu-about h3 { margin-top: 1em; margin-bottom: 0; font-size: 3em; }
 
-  .wrapper {
-    max-width: 100%;
-  }
+  .menu-card { width: 45%; height: 190px; }
 
-  /* ==== MENU SECTION ==== */
-  .menu-about {
-    max-width: 100%;
-    padding: 0 6em 2em;
-    border-radius: 0;
-  }
+  .about-text p { font-size: .9rem; }
 
-  .menu-about h3 {
-    margin-top: 1em;
-    margin-bottom: 0;
-    font-size: 3em;
-  }
+  .contact-banner { justify-content: center; }
+  .contact-box { margin: 1.5em; }
 
-
-  .menu-card {
-    width: 45%;
-    height: 190px;
-  }
-
-  /* ==== ABOUT SECTION ==== */
-  .about-text p {
-    font-size: .9rem;
-  }
-
-  
-
-  
-
-  /* ==== CONTACT SECTION ==== */
-  .contact-banner {
-    justify-content: center;
-  }
-
-  .contact-box {
-    margin: 1.5em;
-  }
-
-  /* ==== ORDER SECTION ==== */
-
-  .order h3 {
-    font-size: 3rem;
-  }
-  .form-wrapper {
-    flex-direction: column;
-  }
-
-  .left-inputs, .right-inputs {
-    width: 100%;
-  }
+  .order h3 { font-size: 3rem; }
+  .form-wrapper { flex-direction: column; }
+  .left-inputs, .right-inputs { width: 100%; }
 }
 
 @media all and (max-width: 519px) {
-  .menu-card {
-    width: 40%;
-    height: 165px;
-  }
-
-  .nav-list {
-    top: 55px;
-    right: -20px;
-  }
+  .menu-card { width: 40%; height: 165px; }
+  .nav-list.open { right: 8px !important; top: 52px !important; }
 }
 
 /* Overlay container */
@@ -996,19 +684,19 @@ footer .socials i {
   justify-content: center;
   align-items: center;
   padding: 16px;
-  pointer-events: none; /* backdrop gets clicks unless over img/button */
+  pointer-events: none;
 }
 
 /* The image scales to fit; no page scroll needed */
 #ff-lightbox-img {
   max-width: 95vw;
   max-height: 90vh;
-  width: auto !important;   /* override any global img rules */
+  width: auto !important;
   height: auto !important;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.5);
-  pointer-events: auto;      /* allow right-click/long-press on the image */
+  pointer-events: auto;
 }
 
 /* Close button always visible */
@@ -1044,14 +732,8 @@ footer .socials i {
   gap: 14px;
 }
 
-/* Keep your existing .menu-card styles */
-.menu-card {
-  background: transparent;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  display: block;
-}
+/* Keep your existing .menu-card styles for grid mode */
+.menu-card { background: transparent; border: 0; padding: 0; cursor: pointer; display: block; }
 .menu-card img {
   width: 100%;
   height: 220px;
@@ -1067,100 +749,745 @@ footer .socials i {
   .other-menu.active {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
-
-  /* Let the grid control width; remove extra margins inside cards */
-  .menu-grid .menu-card {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;        /* rely on grid gap, not card margins */
-  }
-
-  /* Uniform tile height on desktop; keeps your nice 2 rows of 3 */
-  .menu-grid .menu-card img {
-    width: 100% !important;
-    height: 220px !important;    /* matches your existing pattern */
-    object-fit: cover;
-    border-radius: 10px;
-  }
+  .menu-grid .menu-card { width: 100% !important; height: auto !important; margin: 0 !important; }
+  .menu-grid .menu-card img { width: 100% !important; height: 220px !important; object-fit: cover; border-radius: 10px; }
 }
 
 /* Make both columns in the menu row share the same height */
-.menu-container {
-  align-items: stretch;   /* instead of center */
-  gap: 16px;              /* keep a little space between aside and grid */
-}
+.menu-container { align-items: stretch; gap: 16px; }
+.menu-about { display: flex; flex-direction: column; align-self: stretch; }
 
-/* Let the aside fill the column height nicely */
-.menu-about {
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;    /* ensures it grows to match the grid */
-  /* Optional: if you want a subtle panel look, uncomment:
-  background: #fff;
-  border-radius: 10px;
-  */
-}
-
-.about-images {
-  display: flex;
-  flex-direction: column;  /* stack vertically */
-  align-items: center;
-  gap: 28px;               /* space between photo, text, and cake */
-  margin-top: 30px;
-}
-
+/* About images */
+.about-images { display: flex; flex-direction: column; align-items: center; gap: 28px; margin-top: 30px; }
 .about-photo {
-  max-width: 480px;        /* was 300px — increased for larger display */
-  width: 90%;              /* keeps it responsive */
+  max-width: 480px;
+  width: 90%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.25s ease;
 }
+.about-photo:hover { transform: scale(1.03); }
+.about-caption { max-width: 70%; text-align: center; font-size: 1.1em; color: inherit; line-height: 1.6; }
 
-.about-photo:hover {
-  transform: scale(1.03);
-}
-
-.about-caption {
-  max-width: 70%;
-  text-align: center;
-  font-size: 1.1em;
-  color: inherit;
-  line-height: 1.6;
-}
-
-/* Base (helps even before mobile) */
-.menu-tabs {
-  display: flex;
-  flex-wrap: wrap;          /* allow wrapping */
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 20px;
-  white-space: normal;      /* override any nowrap */
-}
+/* Tabs wrap nicely on small screens */
+.menu-tabs { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 12px 0 20px; white-space: normal; }
 .menu-tabs li { margin: 0; }
-
-/* Mobile: stack full-width buttons */
 @media (max-width: 763px) {
-  .menu-tabs {
-    justify-content: center;
-  }
-  .menu-tabs li {
-    flex: 1 1 100%;         /* each item takes full row */
-    display: flex;          /* so the button can fill it */
-  }
-  .menu-tabs .tab-btn {
-    width: 100%;            /* full-width pill */
-    text-align: center;
-    padding: 12px 16px;
-    font-size: 1.1rem;
-  }
+  .menu-tabs { justify-content: center; }
+  .menu-tabs li { flex: 1 1 100%; display: flex; }
+  .menu-tabs .tab-btn { width: 100%; text-align: center; padding: 12px 16px; font-size: 1.1rem; }
 }
-
-/* Very small phones: keep same behavior */
 @media (max-width: 519px) {
   .menu-tabs li { flex-basis: 100%; }
   .menu-tabs .tab-btn { font-size: 1.05rem; padding: 12px; }
+}
+
+/* ——— Fix stray hamburger box on desktop ——— */
+.menu-icon {
+  display: none !important;          /* hide the whole anchor on desktop */
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+.menu-icon i { display: none !important; }  /* no glyph leftovers */
+
+/* Bring it back only for small screens (matches your nav breakpoint) */
+@media (max-width: 1080px) {
+  .menu-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: .25rem .35rem;
+    border-radius: 8px;              /* optional: tappable area */
+    background: transparent;         /* no cream box here */
+  }
+  .menu-icon i {
+    display: inline-block !important;
+    font-size: 2rem;
+    color: #FADFB2;
+  }
+}
+/* === Unify gallery sizing across Cakes / Cookies / Other === */
+
+/* Let the grid control layout; kill fixed card sizing inside these sections */
+.cake-menu .menu-card,
+.cookies-menu .menu-card,
+.other-menu .menu-card {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;          /* rely on the grid gap */
+}
+
+/* Uniform image tiles */
+.cake-menu .menu-card img,
+.cookies-menu .menu-card img,
+.other-menu .menu-card img {
+  width: 100% !important;
+  height: 220px !important;      /* same as Cakes had */
+  object-fit: cover !important;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Ensure all active tabs use the same grid */
+.cake-menu.active,
+.cookies-menu.active,
+.other-menu.active {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+  gap: 14px !important;
+}
+
+/* Desktop: keep the neat 3-column look for all three tabs */
+@media (min-width: 1186px) {
+  .cake-menu.active,
+  .cookies-menu.active,
+  .other-menu.active {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* === Normalize CAKES tab sizing to match Cookies/Other === */
+
+/* Remove legacy width caps that only applied to .cake-menu */
+.cake-menu {
+  max-width: 100% !important;   /* let it flex like the others */
+  flex: 1 1 0 !important;       /* same flex behavior */
+  min-width: 0;                  /* allow grid to calculate columns */
+}
+
+/* Ensure the grid and tiles match across all three tabs */
+.cake-menu.active,
+.cookies-menu.active,
+.other-menu.active {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.cake-menu .menu-card,
+.cookies-menu .menu-card,
+.other-menu .menu-card {
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;          /* rely on grid gap */
+}
+
+.cake-menu .menu-card img,
+.cookies-menu .menu-card img,
+.other-menu .menu-card img {
+  width: 100% !important;
+  height: 220px !important;      /* uniform thumbnail height */
+  object-fit: cover !important;
+  border-radius: 10px;
+  display: block;
+}
+
+/* (Optional) Desktop: harden to the neat 3-column look for ALL tabs */
+@media (min-width: 1186px) {
+  .cake-menu.active,
+  .cookies-menu.active,
+  .other-menu.active {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* === Fix About Me & Reviews section styling === */
+
+/* Rounded panels and breathing room */
+.about,
+.reviews {
+  border-radius: 12px;
+  margin: 40px auto;          /* adds spacing between stacked sections */
+  padding: 48px 32px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* subtle lift */
+}
+
+/* Remove the heavy black divider lines */
+.about-text h3:first-of-type,
+.about-text h3:last-of-type,
+.reviews > h3 {
+  border: none !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Keep your nice brand color background & text color */
+.about,
+.reviews {
+  background-color: #903716;
+  color: #FADFB2;
+}
+
+/* Add consistent spacing between sections */
+.reviews {
+  margin-top: 60px;   /* separate it from About */
+}
+
+/* Optional: make headings stand out without bars */
+.about-text h3,
+.reviews > h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* Remove any remaining bold lines in Reviews */
+.reviews > h3,
+.review-container {
+  border: none !important;
+}
+
+/* Match Place an Order panel to About/Reviews */
+.order {
+  background: #903716;
+  color: #FADFB2;
+  border-radius: 12px;
+  margin: 40px auto;
+  padding: 48px 32px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Override the inline style on the H3 so the whole panel looks cohesive */
+.order h3 {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+}
+
+/* Keep the form narrower inside the panel for nice margins */
+.order form {
+  max-width: 75%;
+}
+
+/* === Fix: Only "Place an Order" title has colored background === */
+.order {
+  background: transparent !important;   /* section stays cream-colored */
+  color: inherit !important;
+  border: none;
+  box-shadow: none;
+  max-width: 90%;
+  margin: 40px auto;                    /* consistent spacing with others */
+  padding: 0;                           /* remove big orange block */
+}
+
+/* Style just the title banner */
+.order h3 {
+  display: inline-block;
+  background-color: #903716 !important; /* brand orange */
+  color: #FADFB2 !important;            /* cream text */
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0 auto 1.5em;
+}
+
+/* Keep the form neatly centered and aligned with other panels */
+.order form {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+/* === Center "Place an Order" as a small pill, not a full-width bar === */
+.order {
+  background: transparent !important;   /* section itself stays cream */
+  border: none !important;
+  box-shadow: none !important;
+  padding: 40px 0 0 !important;         /* some top breathing room */
+  margin: 40px auto !important;         /* match spacing of other sections */
+  max-width: 90%;                        /* consistent width with others */
+  text-align: center;                    /* centers the inline-block h3 */
+}
+
+.order h3 {
+  display: inline-block !important;      /* prevents full-width bar */
+  width: auto !important;                /* only as wide as the text */
+  background-color: #903716 !important;  /* brand color */
+  color: #FADFB2 !important;             /* cream text */
+  padding: 10px 20px !important;         /* pill padding */
+  border-radius: 10px !important;        /* rounded pill */
+  margin: 0 auto 1.25rem !important;     /* centered + space below */
+}
+
+/* keep the form nicely centered under the title */
+.order form {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+/* === Match footer navbar height to top navbar === */
+.footer-nav.navbar {
+  padding: 1em !important;               /* same as top navbar */
+  align-items: center !important;
+  justify-content: space-between !important;
+  background-color: #903716 !important;  /* same brand color */
+  color: #FADFB2 !important;
+  min-height: 70px;                      /* ensures consistent height */
+}
+
+.footer-nav.navbar .nav-list li {
+  padding: .3em 0 !important;            /* same vertical spacing as top */
+}
+
+.footer-nav.navbar .fancy-font {
+  font-size: 2.3rem !important;          /* same brand heading size */
+}
+
+/* === Make bottom navbar the same height as the top === */
+.navbar {
+  min-height: 72px;                 /* top bar baseline */
+  padding: 1em;                     /* already set for top; reaffirm */
+}
+
+footer {                             /* stop footer's own rule from shrinking it */
+  border-radius: 0;                  /* optional: match top bar edges */
+}
+
+.footer-nav.navbar {
+  display: flex !important;
+  align-items: center !important;    /* vertical centering like top */
+  justify-content: space-between !important;
+  gap: 16px !important;
+
+  min-height: 72px !important;       /* match top navbar height */
+  padding: 1em !important;           /* match top navbar padding */
+}
+
+/* Ensure interior items align the same way as the top nav */
+.footer-nav.navbar .nav-list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.footer-nav.navbar .nav-list li {
+  padding: .3em 0 !important;       /* same vertical rhythm as top */
+  border-bottom: 3px solid transparent; /* keep hover style consistent */
+}
+
+.footer-nav.navbar .fancy-font {
+  font-size: 2.3rem !important;     /* same brand title size as top */
+  line-height: 1 !important;
+}
+
+.footer-nav.navbar .socials i {
+  font-size: 2rem !important;       /* already similar, reaffirm */
+  line-height: 1 !important;
+}
+
+/* === Make footer navbar full-bleed like the top navbar === */
+.footer-nav.navbar {
+  /* stretch edge-to-edge even inside a centered container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  /* match top bar look/spacing */
+  background-color: #903716 !important;
+  color: #FADFB2 !important;
+  border-radius: 0 !important;
+  min-height: 72px;
+  padding: 1em;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px;
+}
+
+/* Normalize inner items to match header nav */
+.footer-nav.navbar .nav-list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+.footer-nav.navbar .nav-list li {
+  padding: .3em 0 !important;
+  border-bottom: 3px solid transparent;
+}
+.footer-nav.navbar .fancy-font {
+  font-size: 2.3rem !important;
+  line-height: 1 !important;
+}
+.footer-nav.navbar .socials i {
+  font-size: 2rem !important;
+  line-height: 1 !important;
+}
+
+/* === Maintain a strict 3 x 2 gallery layout for all tabs above 885px === */
+@media (min-width: 885px) {
+  .cake-menu.active,
+  .cookies-menu.active,
+  .other-menu.active {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; /* exactly 3 columns */
+    grid-auto-rows: auto;
+    gap: 18px;
+    justify-items: center;
+  }
+
+  .cake-menu .menu-card img,
+  .cookies-menu .menu-card img,
+  .other-menu .menu-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
+
+  /* Keep consistent overall width to center the 3x2 grid */
+  .menu-container {
+    justify-content: center !important;
+    align-items: flex-start !important;
+    gap: 20px;
+  }
+}
+
+/* === MOBILE: keep WhatsApp visible next to the hamburger === */
+@media (max-width: 1080px) {
+  /* undo the old hide rule */
+  .contact-num {
+    display: inline-flex !important;
+    align-items: center;
+    margin: 0;
+  }
+
+  /* make it a compact round button so it fits the header */
+  .contact-num .whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: #25D366;                 /* WhatsApp green */
+    color: #ffffff !important;
+    border-radius: 999px;
+    padding: 6px 10px;
+    line-height: 1;
+    font-size: 0;                         /* hide the text label */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  /* show just the icon at a readable size */
+  .contact-num .whatsapp-link i {
+    font-size: 22px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+  }
+}
+
+/* desktop stays as-is (full text + icon visible) */
+
+/* === Fix navbar alignment and prevent hamburger drifting === */
+@media (max-width: 1080px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* evenly space logo and WhatsApp */
+    padding: 0.6em 1em;
+    position: relative;
+  }
+
+  /* Keep the logo (h1) anchored on the left */
+  .navbar .fancy-font {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* Hamburger menu stays immediately to the right of logo */
+  .navbar .menu-icon {
+    order: 2;
+    margin-left: 0.75em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #FADFB2;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* Ensure WhatsApp icon always sticks to far right */
+  .navbar .contact-num {
+    order: 3;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  /* Compact WhatsApp icon on mobile */
+  .navbar .contact-num .whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: #fff !important;
+    border-radius: 999px;
+    padding: 6px 10px;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar .contact-num .whatsapp-link i {
+    font-size: 22px !important;
+    color: #ffffff !important;
+  }
+
+  /* Hide the phone number text label */
+  .navbar .contact-num .whatsapp-link::after {
+    content: none;
+  }
+}
+
+/* === Fix navbar alignment and spacing for hamburger + WhatsApp === */
+@media (max-width: 1080px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6em 1.2em;
+    position: relative;
+  }
+
+  /* Logo on the left */
+  .navbar .fancy-font {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* Hamburger menu next to logo, with a bit of breathing room */
+  .navbar .menu-icon {
+    order: 2;
+    margin-left: 0.75em;
+    margin-right: 0.8em;     /* ← added spacing between hamburger and WhatsApp */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #FADFB2;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* WhatsApp button anchored to far right */
+  .navbar .contact-num {
+    order: 3;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  /* Compact WhatsApp icon on mobile */
+  .navbar .contact-num .whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: #fff !important;
+    border-radius: 999px;
+    padding: 6px 10px;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar .contact-num .whatsapp-link i {
+    font-size: 22px !important;
+    color: #ffffff !important;
+  }
+}
+
+/* === Fix navbar alignment and spacing for hamburger + WhatsApp (wider gap) === */
+@media (max-width: 1080px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6em 1.4em;
+    position: relative;
+  }
+
+  /* Logo stays anchored left */
+  .navbar .fancy-font {
+    flex: 1;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* Hamburger menu near the logo, with generous spacing from WhatsApp */
+  .navbar .menu-icon {
+    order: 2;
+    margin-left: 0.8em;
+    margin-right: 2.2em;   /* ⬅️ increased spacing here */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #FADFB2;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  /* WhatsApp button pinned to far right */
+  .navbar .contact-num {
+    order: 3;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  /* Compact WhatsApp icon */
+  .navbar .contact-num .whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #25D366;
+    color: #fff !important;
+    border-radius: 999px;
+    padding: 8px 12px;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .navbar .contact-num .whatsapp-link i {
+    font-size: 24px !important;
+    color: #ffffff !important;
+  }
+}
+
+/* === Mobile dropdown: readable text + light shadow, no tiles === */
+@media (max-width: 1080px) {
+  /* Lighter panel, but still enough contrast for text */
+  .navbar .nav-list.open {
+    background: rgba(144, 55, 22, 0.78);   /* ~78% opacity */
+    backdrop-filter: blur(1.5px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18); /* softer shadow */
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+
+  /* Remove cream “tiles” so links don’t inherit unreadable colors */
+  .navbar .nav-list.open li {
+    background: transparent !important;
+    color: inherit !important;
+    margin: 4px 0;
+    border-radius: 6px;
+  }
+
+  /* FORCE visible link text regardless of global 'a { color: inherit }' */
+  .navbar .nav-list.open li a {
+    color: #FADFB2 !important;            /* readable beige */
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.25);  /* subtle legibility boost */
+    display: block;
+    padding: 0.5em 0.6em;
+  }
+
+  /* Gentle hover (no drastic color change) */
+  .navbar .nav-list.open li:hover {
+    background: rgba(250, 223, 178, 0.12); /* faint highlight */
+  }
+}
+
+/* === Mobile dropdown: soft filled background for each link === */
+@media (max-width: 1080px) {
+  .navbar .nav-list.open {
+    background: rgba(144, 55, 22, 0.85);   /* overall dropdown panel */
+    backdrop-filter: blur(1.5px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* space between links */
+  }
+
+  /* Each link gets a warm filled background */
+  .navbar .nav-list.open li {
+    background: rgba(250, 223, 178, 0.25); /* soft beige fill */
+    border-radius: 8px;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .navbar .nav-list.open li a {
+    display: block;
+    color: #FADFB2 !important;  /* readable beige text */
+    font-weight: 600;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+  }
+
+  /* On hover, slightly brighten the fill */
+  .navbar .nav-list.open li:hover {
+    background: rgba(250, 223, 178, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+/* === MOBILE: each menu link gets its own filled pill === */
+@media (max-width: 1080px) {
+  /* keep the dropdown panel light and non-blocking */
+  .navbar .nav-list.open {
+    /* background: rgba(144, 55, 22, 0.55) !important; */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.14) !important;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;                /* spacing between link pills */
+  }
+
+  /* remove any leftover box fill from LI, we’ll style the anchor */
+  .navbar .nav-list.open li {
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  /* the pill lives on the <a> element so the fill is guaranteed */
+  .navbar .nav-list.open li a {
+    display: block;
+    background: rgba(250, 223, 178, 0.92) !important; /* soft cream fill */
+    color: #903716 !important;                        /* brand text */
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: none !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  }
+
+  .navbar .nav-list.open li a:hover {
+    background: rgba(250, 223, 178, 1) !important;    /* a touch brighter */
+  }
+}
+
+/* === Divider line above the about-caption === */
+.about-divider {
+  width: 60%;
+  max-width: 500px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #FADFB2, transparent);
+  margin: 25px auto 20px;  /* top auto bottom spacing */
+  border-radius: 2px;
+  opacity: 0.8;
 }

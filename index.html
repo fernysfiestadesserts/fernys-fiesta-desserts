@@ -21,33 +21,42 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		
 		<header class="navbar">
-			<h1 class="fancy-font">Ferny's Fiesta Desserts</h1>
-				
-			<a href="#" class="menu-icon"><i class='bx bx-menu'></i></a>
+			<h1 class="brand fancy-font">Ferny's Fiesta Desserts</h1>
 
+			<!-- Hamburger (hidden on desktop by CSS) -->
+			<button class="menu-icon" aria-label="Open menu" aria-expanded="false">
+				<i class='bx bx-menu'></i>
+			</button>
+
+			<!-- Desktop nav (inline on desktop, dropdown on mobile when .open) -->
 			<ul class="nav-list">
 				<li><a href="#">Home</a></li>
-				<li><a href="#menu">Menu</a></li>
+				<li><a href="#menu">Our Desserts</a></li>
 				<li><a href="#about">About</a></li>
-				<li><a href="#specials">Special Offers</a></li>
 				<li><a href="#reviews">Reviews</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li><a href="#order">Order</a></li>
 			</ul>
 
-			<p class="bold contact-num"><a href="https://wa.me/529998020769?text=Hi%20Fernys%20Fiesta%20Desserts!%20I%27d%20like%20to%20place%20an%20order." target="_blank" class="whatsapp-link"><i class='bx bxl-whatsapp'></i> +52 999 802 0769</a></p>
-				
+			<!-- Phone (stays at far right on desktop; stacks below on mobile) -->
+			<p class="bold contact-num">
+				<a href="https://wa.me/529998020769?text=Hi%20Fernys%20Fiesta%20Desserts!%20I%27d%20like%20to%20place%20an%20order."
+				target="_blank" class="whatsapp-link"><i class='bx bxl-whatsapp'></i> +52 999 802 0769</a>
+			</p>
 		</header>
+
 		<main>
 			<div class="hero-text">
-				<h2 class="fancy-font">Decadent custom made desserts!</h2>
+				<h2 class="fancy-font">Desserts - Just Because!</h2>
 				<a href="#order" class="btn btn-alt bold">Place An Order</a>		
 			</div>
 		</main>
 		<div class="wrapper">
 			<section class="menu" id="menu">
-				<h3 class="fancy-font menu-title">Our Menu</h3>
+				
+				<h3 class="fancy-font menu-title">Our Desserts</h3>
+
+				<!-- <h3 class="fancy-font menu-title">Our Menu</h3> -->
 
 				<!-- Accessible tabs -->
 				<ul class="menu-list menu-tabs" role="tablist" aria-label="Dessert categories">
@@ -63,11 +72,11 @@
 				</ul>
 
 				<div class="menu-container">
-					<aside class="menu-about">
+					<!-- <aside class="menu-about">
 						<h3 class="fancy-font">About Our Desserts</h3>
 						<p>At Ferny's Fiesta Desserts, we bake custom cakes, cookies, and desserts for every day and special occasions. We only use the best ingredients and can accomodate for any dietary restrictions. Take a look at our custom desserts!</p>
 						<a href="#order" class="btn">Click To Order</a>
-					</aside>
+					</aside> -->
 					
 					<section class="cake-menu menu-grid active">
 
@@ -140,15 +149,17 @@
 			<section class="about" id="about">
 				<div class="about-text">
 					<h3 class="fancy-font">About Me</h3>
-					<p>Hi, I'm Fernando, the proud owner of Ferny's Fiesta Desserts. I'm a self-taught home baker with over 25 years of experience creating desserts that bring joy to every occasion. My love for baking began long before it became a business. I used to make desserts for work parties, holiday gatherings, and family celebrations.</p>
+					<p>The spark to my baking journey started when my godson turned five. We bought him a beautiful Toy Story cake from a local bakery — decoration-wise, it looked amazing, but the taste didn’t match its appearance. The following year, Sonic the Hedgehog had become his favorite character and the type of cake he wanted. So, I took on the task — not just to create a beautiful and flavorful cake, but to make it a true celebration: a way to capture him at that moment in his life. In reflection, maybe only the grown-ups cared about the flavors. But what good is a dessert that doesn’t spark something inside of you?</p>
+					<!-- <p>Hi, I'm Fernando, the proud owner of Ferny's Fiesta Desserts. I'm a self-taught home baker with over 25 years of experience creating desserts that bring joy to every occasion. My love for baking began long before it became a business. I used to make desserts for work parties, holiday gatherings, and family celebrations.</p>
 					<p>But, the moment that truly sparked my journey was when my godson turned five. We bought him a beautiful Toy Story cake from a bakery - it looked amazing, but the flavor just didn't match its appearance. The next year, he wanted a Sonic the Hedgehog cake. That experience inspired me to take a cake decorating course, and from there, my passion grew even stronger.</p>
-					<p>Now based in Mérida, Yucatán, I decided to turn my lifelong love of baking into my full-time profession. Today, through Ferny's Fiesta Desserts, I create and sell delicious desserts for every occasion - from birthdays to "just because" treats.</p>
+					<p>Now based in Mérida, Yucatán, I decided to turn my lifelong love of baking into my full-time profession. Today, through Ferny's Fiesta Desserts, I create and sell delicious desserts for every occasion - from birthdays to "just because" treats.</p> -->
 					<h3 class="fancy-font">Fernando Henry</h3>
 					    <!-- New images start here -->
 					<div class="about-images">
 						
 						<img src="images/other_gallery/fernando.jpeg" alt="Fernando Henry, owner of Ferny's Fiesta Desserts" class="about-photo">
-						
+						<div class="about-divider"></div>
+
 						<p class="about-caption">And here's the cake that started it all!</p>
 
 						<img src="images/cake_gallery/sonic.jpg" alt="Sonic the Hedgehog cake made by Fernando" class="about-photo">
@@ -156,7 +167,9 @@
 				</div>
 			</section>
 
-			<section class="specials" id="specials">
+			<!-- TODO: REMOVE -->
+
+			<!-- <section class="specials" id="specials">
 				<div class="specials-container">
 					<aside class="specials-offer">
 						<h3 class="fancy-font">Special Offers</h3>
@@ -170,7 +183,7 @@
 					</div>
 					
 				</div>
-			</section>
+			</section> -->
 
 			<section class="reviews" id="reviews">
 				<h3 class="fancy-font">Reviews</h3>
@@ -178,8 +191,7 @@
 				<div class="review-container">
 	
 					<div class="review1">
-						<p>They made such an amazing wedding cake for us, everyone said it was the most tasty cake they ever had! We would recommend Ferny's Fiesta Desserts to whoever needs a cake for a celebration or any event. Thank you again.</p>
-						<h3>&mdash; Justin Thyme</h3>
+						<p>Hola Fernando! You most certainly outdid yourself!  The cake was a hit, for sure. With 12 people, we didn’t even finish the base. It was so rich and everything I had hoped for and more. Mil gracias!</p>
 					</div>
 					
 					<div class="review2">
@@ -195,7 +207,7 @@
 				</div>
 			</section>
 
-			<section class="contact" id="contact">
+			<!-- <section class="contact" id="contact">
 				<div class="contact-banner">
 					
 					<aside class="contact-box">
@@ -230,7 +242,7 @@
 						
 					</aside>
 				</div>
-			</section>
+			</section> -->
 
 			<section class="order" id="order">
 				<h3 class="fancy-font" style="background-color:#903716; color:#FADFB2; padding:10px 20px; border-radius:8px;">Place An Order</h3>
@@ -260,27 +272,23 @@
 				</form>
 
 			</section>
-
 			<footer class="footer-nav navbar">
 				<div class="copyright">
 					<h3 class="fancy-font"><a href="#">Ferny's Fiesta Desserts</a></h3>
-					<span>Copywright 2025 By <a href="#">Haroon A.</a></span>
+					<!-- <span>Copyright 2025 By <a href="#">Haroon A.</a></span> -->
 				</div>
-
-				<ul class="nav-list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#specials">Special Offers</a></li>
-					<li><a href="#reviews">Reviews</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
 
 				<div class="socials">
-					<a href="https://www.instagram.com/fernysfiestadesserts" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-					<a href="mailto:fernysfiestadesserts@gmail.com" aria-label="Email"><i class='bx bx-envelope' ></i></a>	
+					<a href="https://www.instagram.com/fernysfiestadesserts" target="_blank" aria-label="Instagram" class="social-icon">
+					<i class='bx bxl-instagram'></i>
+					</a>
+					<a href="https://wa.me/529998020769?text=Hi%20Fernys%20Fiesta%20Desserts!%20I%27d%20like%20to%20place%20an%20order."
+					target="_blank" aria-label="WhatsApp" class="social-icon whatsapp-icon">
+					<i class='bx bxl-whatsapp'></i>
+					</a>
 				</div>
 			</footer>
+
 		</div>
 		
 		<!-- Minimal, conflict-free lightbox -->
